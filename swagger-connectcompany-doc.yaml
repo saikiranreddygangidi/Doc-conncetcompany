@@ -1,0 +1,137 @@
+swagger: "2.0"
+info:
+  description: "This is the Swagger API Documentation for Featured Location Web Application"
+  version: "1.0.0"
+  title: "ConncetCompany"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "saikiranreddygangidi@gamil.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "connectcompanyapi.herokuapp.com"
+basePath: "/connectcompany/api/v1"
+tags:
+- name: "user"
+  description: "User Login Credentials"
+- name: "location"
+  description: "Details of All the Locations"
+
+schemes:
+- "https"
+
+paths:
+  /getAllCompanies:
+    get:
+      tags:
+      - "user"
+      summary: "Get a list of all the companies list"
+      description: ""
+      operationId: "getUsers"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Get all companies details"
+  /getAllEvents:
+    get:
+      tags:
+      - "user"
+      summary: "Get a list of all the events details"
+      description: ""
+      operationId: "getUsers"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Get all companies details"
+          
+  /getAllCompaniesByEmail/s541902:
+    get:
+      tags:
+      - "user"
+      summary: "Get a list of all the events details"
+      description: ""
+      operationId: "getUsers"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Get all getAllCompaniesByEmail"
+
+    
+
+
+  /register:
+    
+
+    post:
+      tags:
+      - "location"
+      summary: "register"
+      description: ""
+      operationId: "postLocation"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "email"
+        in: "email"
+        description: ""
+        required: true
+        type: "email"
+      - name: "username"
+        in: "query"
+        description: ""
+        required: true
+        type: "string"
+     
+      - name: "code"
+        in: "query"
+        description: ""
+        required: true
+        type: "string" 
+      
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/location"
+        
+
+
+definitions:
+  user:
+    type: "object"
+    properties:
+      userName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+
+  register:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      code:
+        type: "string"
+      username:
+        type: "string"
+    
+
+ 
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
